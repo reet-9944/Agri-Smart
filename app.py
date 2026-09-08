@@ -18,7 +18,7 @@ st.markdown("""
 col_empty, col_title, col_lang = st.columns([1, 2.5, 1])
 
 with col_lang:
-
+    st.markdown("<div style='margin-top: 15px;'></div>", unsafe_allow_html=True)
     language = st.selectbox("Language", ["English", "हिंदी (Hindi)"], label_visibility="collapsed")
 
 # Define dynamic text based on language
