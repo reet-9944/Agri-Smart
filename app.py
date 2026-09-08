@@ -38,31 +38,31 @@ with col2:
             st.success("✅ Analysis Complete!")
             
             # AI Diagnosis Output
-            st.markdown("### 🔬 Diagnosis: **Tomato Early Blight**")
-            st.progress(0.94, text="AI Confidence Score: 94%")
+            st.markdown("### 🔬 Diagnosis: **Apple Scab (Venturia inaequalis)**")
+            st.progress(0.96, text="AI Confidence Score: 96%")
             
             # RAG Treatment Output
             st.markdown("### 💊 RAG Recommended Treatment")
-            st.info("**Eco-friendly Option:** Copper-based organic fungicide spray. Apply early morning once a week to prevent spreading.")
+            st.info("**Eco-friendly Option:** Organic Sulfur-based bio-fungicide or Neem oil spray. Prune infected areas and apply before predicted rain to prevent spore spread.")
             
             # Agentic Recommender Output
             st.markdown("### 🛒 Cost-Optimization & Local Market")
-            st.write("- 🥇 **Top Choice:** EcoCopper Spray (1L)")
-            st.write("- 💰 **Cost:** ₹450 / Liter *(Identified as the most cost-effective)*")
+            st.write("- 🥇 **Top Choice:** EcoSulfur Bio-Protect (1L)")
+            st.write("- 💰 **Cost:** ₹350 / Liter *(Identified as the most cost-effective)*")
             st.write("- 📍 **Availability:** Kisan Agri Store, Main Market")
 
             # Community Feedback Loop
             st.markdown("### 🧑‍🌾 Community Feedback Loop")
-            st.write("⭐⭐⭐⭐⭐ **4.8/5** *(Based on 24 local farmer reviews)*")
+            st.write("⭐⭐⭐⭐⭐ **4.7/5** *(Based on 32 local orchard farmers)*")
             
             st.success("""
-            > *\"Used EcoCopper last month. Very cheap and cleared the blight in 3 days. Highly recommend!\"* 
-            > **— Ramesh, Local Farmer**
+            > *\"Used EcoSulfur in my apple orchard last season. Very cheap and stopped the scab from spreading to my healthy apples. Highly recommend!\"* 
+            > **— Ramesh, Local Orchard Farmer**
             """)
             
             st.warning("""
-            > *\"Make sure to spray only in the morning, otherwise leaves get burned in the sun. Good product.\"* 
-            > **— Sita, Organic Grower**
+            > *\"Make sure to spray early in the morning and clear away any fallen leaves around the tree trunk!\"* 
+            > **— Sita, Organic Apple Grower**
             """)
     else:
         st.info("👈 Please upload an image of a crop on the left to begin the AI analysis.")
