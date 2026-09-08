@@ -15,8 +15,11 @@ with st.expander("🎥 How to use Agri-Smart (Tutorial)"):
     st.write("2. **Scan / Upload:** Take a clear picture of the diseased leaf or plant.")
     st.write("3. **Analyze:** Click the green 'Analyze with Agentic AI' button to get your instant diagnosis, treatment plan, and local market costs.")
     
-    # Placeholder video - the user can replace this URL with their actual recorded demo video link later!
-    st.video("https://www.youtube.com/watch?v=Fj2AEEr3uEU") 
+    # Use columns to make the video player much smaller
+    v_col1, v_col2, v_col3 = st.columns([1, 2, 1])
+    with v_col2:
+        # Valid placeholder video - replace with your demo video link later!
+        st.video("https://www.youtube.com/watch?v=LXb3EKWsInQ")
 
 st.divider()
 
