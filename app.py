@@ -5,10 +5,21 @@ from PIL import Image
 # Page Configuration
 st.set_page_config(page_title="Agri-Smart AI", page_icon="🌱", layout="wide", initial_sidebar_state="collapsed")
 
-# Language Selector (Top Right)
-col_spacer, col_lang = st.columns([4, 1])
+# Custom CSS to reduce top padding and align everything perfectly
+st.markdown("""
+    <style>
+    .block-container {
+        padding-top: 2rem;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Top Row Layout: Empty space (Left), Title (Center), Language (Right)
+col_empty, col_title, col_lang = st.columns([1, 2.5, 1])
+
 with col_lang:
-    language = st.selectbox("🌐 Select Language", ["English", "हिंदी (Hindi)"])
+    st.write("") # Small spacer to vertically center the dropdown
+    language = st.selectbox("Language", ["English", "हिंदी (Hindi)"], label_visibility="collapsed")
 
 # Define dynamic text based on language
 if language == "English":
@@ -63,8 +74,9 @@ else:
     t_empty = "👈 विश्लेषण शुरू करने के लिए बाईं ओर एक छवि अपलोड करें या पौधे को स्कैन करें।"
 
 # Header
-st.markdown(f"<h1 style='text-align: center; margin-bottom: 0;'>{t_title}</h1>", unsafe_allow_html=True)
-st.markdown(f"<p style='text-align: center; font-size: 1.2em; margin-top: 0;'>{t_subtitle}</p>", unsafe_allow_html=True)
+with col_title:
+    st.markdown(f"<h1 style='text-align: center; margin-top: -30px; margin-bottom: 0;'>{t_title}</h1>", unsafe_allow_html=True)
+    st.markdown(f"<p style='text-align: center; font-size: 1.2em; margin-top: 0;'>{t_subtitle}</p>", unsafe_allow_html=True)
 
 # Tutorial Video Section
 with st.expander(t_tutorial):
@@ -137,5 +149,3 @@ with col_ui:
                     st.markdown(t_comm_res)
     else:
         st.info(t_empty)
-
-st.divider()
