@@ -18,7 +18,7 @@ st.markdown("""
 col_empty, col_title, col_lang = st.columns([1, 2.5, 1])
 
 with col_lang:
-    st.write("") # Small spacer to vertically center the dropdown
+
     language = st.selectbox("Language", ["English", "हिंदी (Hindi)"], label_visibility="collapsed")
 
 # Define dynamic text based on language
@@ -75,7 +75,7 @@ else:
 
 # Header
 with col_title:
-    st.markdown(f"<h1 style='text-align: center; margin-top: -30px; margin-bottom: 0;'>{t_title}</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1 style='text-align: center; margin-top: 0px; margin-bottom: 0;'>{t_title}</h1>", unsafe_allow_html=True)
     st.markdown(f"<p style='text-align: center; font-size: 1.2em; margin-top: 0;'>{t_subtitle}</p>", unsafe_allow_html=True)
 
 # Tutorial Video Section
