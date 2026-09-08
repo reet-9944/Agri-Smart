@@ -46,8 +46,5 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## 🎥 Demo Video
-*(Insert Link to YouTube/Drive Demo Video Here)*
-
 ---
-*Developed by [Your Name] for the 1M1B AI for Sustainability Internship.*
+*Developed by Reetu Rani for the 1M1B AI for Sustainability Internship.*
