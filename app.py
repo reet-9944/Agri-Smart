@@ -66,4 +66,4 @@ with col_ui:
         st.info("👈 Upload an image on the left to begin the analysis.")
 
 st.divider()
-st.caption("Developed by Reetu Rani for the 1M1B AI for Sustainability Virtual Internship")
+

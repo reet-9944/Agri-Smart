@@ -47,4 +47,4 @@ streamlit run app.py
 ```
 
 ---
-*Developed by Reetu Rani for the 1M1B AI for Sustainability Internship.*
+
