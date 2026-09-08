@@ -8,6 +8,16 @@ st.set_page_config(page_title="Agri-Smart AI", page_icon="🌱", layout="wide", 
 # Header
 st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>🌱 Agri-Smart</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; font-size: 1.2em; margin-top: 0;'>AI Crop Advisor & Community Hub</p>", unsafe_allow_html=True)
+
+# Tutorial Video Section
+with st.expander("🎥 How to use Agri-Smart (Tutorial)"):
+    st.write("1. **Choose Input Method:** On the left, choose between uploading an existing photo or doing a live camera scan of your crop.")
+    st.write("2. **Scan / Upload:** Take a clear picture of the diseased leaf or plant.")
+    st.write("3. **Analyze:** Click the green 'Analyze with Agentic AI' button to get your instant diagnosis, treatment plan, and local market costs.")
+    
+    # Placeholder video - the user can replace this URL with their actual recorded demo video link later!
+    st.video("https://www.youtube.com/watch?v=Fj2AEEr3uEU") 
+
 st.divider()
 
 # Main Layout: Image on Left, UI/Results on Right
@@ -15,13 +25,24 @@ col_img, col_ui = st.columns([1.2, 2.8])
 
 with col_img:
     st.markdown("### 📸 Image Input")
-    uploaded_file = st.file_uploader("Upload Crop Photo", type=["jpg", "png", "jpeg"])
-    if uploaded_file is not None:
-        image = Image.open(uploaded_file)
-        st.image(image, caption="Uploaded Image", use_container_width=True)
+    
+    # Added Tabs for Upload vs Live Scan
+    tab1, tab2 = st.tabs(["📁 Upload File", "📷 Live Scan"])
+    
+    with tab1:
+        uploaded_file = st.file_uploader("Upload Crop Photo", type=["jpg", "png", "jpeg"])
+    with tab2:
+        camera_file = st.camera_input("Scan plant with camera")
+        
+    # Determine which input method the user used
+    final_file = camera_file if camera_file is not None else uploaded_file
+
+    if final_file is not None:
+        image = Image.open(final_file)
+        st.image(image, caption="Captured Image", use_container_width=True)
 
 with col_ui:
-    if uploaded_file is not None:
+    if final_file is not None:
         if st.button("🔍 Analyze with Agentic AI", type="primary", use_container_width=True):
             
             # Loading states
@@ -63,7 +84,6 @@ with col_ui:
                     st.markdown("*\"Cheap and stopped scab from spreading!\"* — **Ramesh**")
                     st.markdown("*\"Spray early morning and clear fallen leaves.\"* — **Sita**")
     else:
-        st.info("👈 Upload an image on the left to begin the analysis.")
+        st.info("👈 Upload an image or scan a plant on the left to begin the analysis.")
 
 st.divider()
-
